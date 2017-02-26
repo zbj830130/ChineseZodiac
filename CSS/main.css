@@ -1,0 +1,96 @@
+body {
+    font: 100%/1.2 Georgia, "Times New Roman", serif;
+    background: #FFFEFE;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    border-bottom: 5px solid #ae1718;
+}
+
+.logo {
+    text-align: left;
+    margin: 0;
+    display: inline-block;
+}
+
+.logo span {
+    display: inline-block;
+    font-size: 58px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 0em;
+    top: -0.5em;
+}
+
+.nav {
+    display: inline-block;
+    width: 24em;
+    height: 2em;
+    position: relative;
+    top: -2.6em;
+    left: 1em;
+}
+
+.nav-main {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-main li {
+    border-left: 1px solid #c8c8c8;
+    display: inline-block;
+    text-align: center;
+    padding: .5em 1em .5em 1em;
+}
+
+.nav-main li:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.nav-main li:last-child a {
+    padding-right: 0;
+}
+
+.nav-main a {
+    color: #292929;
+    display: inline-block;
+    font-size: 1.5em;
+    /* 18px/16px */
+}
+
+.nav-main a:hover {
+    color: #ae1718;
+    text-decoration: none;
+    border-bottom: 5px solid #000;
+}
+
+.contain {
+    
+}
+
+footer {
+    clear: left;
+    position: relative;
+    top: 20px;
+    border-top: 5px solid #ae1718;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}

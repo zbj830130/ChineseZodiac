@@ -1,0 +1,41 @@
+#tabs {
+    margin-top: 20px;
+}
+
+.zodiacList {
+    margin: 0 auto;
+    width: 780px;
+    height: 800px;
+}
+
+.items {
+    float: left;
+    width: 168px;
+    height: 240px;
+    margin: 10px;
+    overflow: hidden;
+    border: 1px solid #acc6e9;
+    background: #e8f5fe;
+}
+
+.item_title {
+    height: 24px;
+    line-height: 24px;
+    background: #afc6e9;
+    margin-top: 0px;
+}
+
+.items img {
+    position: relative;
+    top: -18px;
+    left: 0px;
+}
+
+#loader {
+    height: 24px;
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}

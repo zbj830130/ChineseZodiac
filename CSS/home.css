@@ -1,0 +1,46 @@
+.contain {
+    margin: 0px;
+    margin-bottom: 110px;
+}
+
+.bigIcon_div{
+    margin-top: 1em;
+}
+
+.zodiac_cycle {
+    float: left;
+    width: 35.5em;
+    height: 35.5em;
+}
+
+.contain .home_artical {
+    width: 21em;
+    float: right;
+    font-size: 20px;
+    line-height: 1.4em;
+}
+
+.home_lunar_calendar {
+    float: right;
+    width: 21em;
+    font-size: 20px;
+    vertical-align: center;
+}
+
+.home_lunar_calendar select {
+    font-size: 16px;
+}
+
+.home_lunar_calendar input {
+    font-size: 18px;
+}
+
+.zodiac_div {
+    margin-top: -32px;
+    margin-left: 270px;
+}
+
+.zodiac_caculat_img {
+    width: auto;
+    height: 2em;
+}
