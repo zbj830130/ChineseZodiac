@@ -15,6 +15,9 @@
 </head>
 
 <body>
+     <?php
+    echo "123";
+?>
     <header>
         <p class="logo">
             <a href="/"><img src="img/icon.png" /></a>

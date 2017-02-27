@@ -33,16 +33,24 @@
         <div id="tabs">
             <ul>
                 <li><a href="#tab-1">Zodiac Order Setting</a></li>
-                <li><a href="#tab-2">Zodiac Discription Setting</a></li>
+                <li><a href="#tab-2">Zodiac Colours Setting</a></li>
             </ul>
             <div id="tab-1" class="zodiacList">
             </div>
 
-            <div id="tab-2" class="zodiacDes">
+            <div id="tab-2" class="zodiacColour">
+                <div class="colorSelecter">
+                    <input type="hidden" id="zodiacName">
+                    <div id="red"></div>
+                    <div id="green"></div>
+                    <div id="blue"></div>
+                    <div id="swatch" class="ui-widget-content ui-corner-all"></div>
+                    <input type="button" value="Submit" id="submitColor">
+                </div>
+                <div class="nameColourList">
+                </div>
             </div>
-
         </div>
-
     </contain>
 
 
