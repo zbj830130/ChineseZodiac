@@ -15,20 +15,13 @@
 </head>
 
 <body>
-     <?php
-    echo "123";
-?>
     <header>
         <p class="logo">
             <a href="/"><img src="img/icon.png" /></a>
             <span>CHINESE ZODIAC</span>
         </p>
         <nav class="nav">
-            <ul class="nav-main">
-                <li><a href="ChineseZodiacHome.html">HOME</a></li>
-                <li><a href="Detail.html">DETAIL</a></li>
-                <li><a href="Settings.html">SETTINGS</a></li>
-            </ul>
+            <?php include "CommonPage/Header.php"?>
         </nav>
     </header>
 
@@ -56,7 +49,7 @@
         </div>
     </contain>
     <footer class="clearfix">
-        <p>©CopyRight Bojin Zhang 2017</p>
+        <?php include 'CommonPage/Footer.php' ?>
     </footer>
     <script type="text/javascript" src="JS/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="JS/home.js"></script>

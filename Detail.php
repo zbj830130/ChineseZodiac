@@ -21,11 +21,7 @@
             <span>CHINESE ZODIAC</span>
         </p>
         <nav class="nav">
-            <ul class="nav-main">
-                <li><a href="ChineseZodiacHome.html">HOME</a></li>
-                <li><a href="Detail.html">DETAIL</a></li>
-                <li><a href="Settings.html">SETTINGS</a></li>
-            </ul>
+            <?php include "CommonPage/Header.php"?>
         </nav>
     </header>
     <contain class="contain">
@@ -34,7 +30,7 @@
 
 
     <footer>
-        <p>©CopyRight Bojin Zhang 2017</p>
+        <?php include 'CommonPage/Footer.php' ?>
     </footer>
     <script type="text/javascript" src="Js/raphael.min.js"></script>
     <script type="text/javascript" src="JS/raphael.icons.min.js"></script>
