@@ -9,10 +9,17 @@
 
     if($_GET['opType']==2){
         $val = !empty($_POST['data']) ? $_POST['data'] : null; 
-        $zodiacSorting = json_decode($val); //sorting array
+        $zodiacSortings = json_decode($val); //sorting array
         
-        for($i=0;$i<12;$i++){
-            
-        }
+        $dao=new ZodiacDAO($serverName,$userName,$password,$databaseName);
+        $dao->modifyZodiacSorting($zodiacSortings);
+    }
+
+    if($_GET['opType']==3){
+        $hexColor = !empty($_POST['hexColor']) ? $_POST['hexColor'] : null; 
+        $currentId = !empty($_POST['currentId']) ? $_POST['currentId'] : null; 
+       
+        $dao=new ZodiacDAO($serverName,$userName,$password,$databaseName);
+        $dao->modifyZodiacColor($hexColor,$currentId);
     }
 ?>

@@ -16,7 +16,12 @@
         }
         
         public function queryData($con,$sql){
-            $result=$con->query($sql);
+            $result= $con->query($sql);
+            return $result;
+        }
+        
+        public function queryMultiData($con,$sql){
+            $result= $con->multi_query($sql);
             return $result;
         }
     }

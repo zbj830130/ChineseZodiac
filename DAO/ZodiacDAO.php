@@ -38,6 +38,29 @@
             $mysqlHelper->closeConnection($con);
             return $zodiacList;
         }
+        
+        public function modifyZodiacSorting($newZodiacSortings){
+            $mysqlHelper = new MySqlHelper();
+            $con = $mysqlHelper->openConnect($this->serverName,$this->userName,$this->password,$this->databaseName);
+            $sqlstr = "";
+            
+            for($i=0;$i<12;$i++){
+                $sortingIndex = $i+1;
+                $sqlstr .= "update ZodiacInfo set sorting='$sortingIndex' where id='$newZodiacSortings[$i]';";
+            }
+
+            $result = $mysqlHelper->queryMultiData($con,$sqlstr);
+            $mysqlHelper->closeConnection($con);
+        }
+        
+        public function modifyZodiacColor($hexColor,$currentId){
+            $mysqlHelper = new MySqlHelper();
+            $con = $mysqlHelper->openConnect($this->serverName,$this->userName,$this->password,$this->databaseName);
+            $sqlstr = "update ZodiacInfo set color='$hexColor' where id='$currentId';";
+
+            $result = $mysqlHelper->queryData($con,$sqlstr);
+            $mysqlHelper->closeConnection($con);
+        }
     }
 
     

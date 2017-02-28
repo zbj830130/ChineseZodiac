@@ -27,6 +27,7 @@
                 <li><a href="#tab-2">Zodiac Colours Setting</a></li>
             </ul>
             <div id="tab-1" class="zodiacList">
+                <input id="prevSortings" type="hidden" />
             </div>
 
             <div id="tab-2" class="zodiacColour">
@@ -35,10 +36,16 @@
                     <div id="red"></div>
                     <div id="green"></div>
                     <div id="blue"></div>
+                    <div id="hexColor">
+                        Hex Color:
+                        <input type="text" class="hexColorInput" />
+                    </div>
                     <div id="swatch" class="ui-widget-content ui-corner-all"></div>
-                    <a href="javascript:vodi(0)">
-                        <img src="Img/submit.png" id="submitColor">
+                    <a href="javascript:void(0)">
+                        <img src="Img/submit.png" id="submitColor" />
                     </a>
+
+                    <input type="hidden" id="currentId" />
                 </div>
                 <div class="nameColourList">
                 </div>
