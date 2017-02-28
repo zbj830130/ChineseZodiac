@@ -1,12 +1,8 @@
 $(function () {
+    //var names = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'];
+    //var colors = ['#b25d25', '#808080', '#ffb61e', '#d41863', '#eacd76', '#8d4bbb', '#4169E1', '#00e09e', '#00e500', '#f00056', '#8A2BE2', '#fabc35
 
-    var $colursList = $(".nameColourList");
-
-    var names = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'];
-    var colors = ['#b25d25', '#808080', '#ffb61e', '#d41863', '#eacd76', '#8d4bbb', '#4169E1', '#00e09e', '#00e500', '#f00056', '#8A2BE2', '#fabc35'];
-
-    zodiacSort(names);
-    colourSelector(names, colors);
+    initZodiacs();
 
     $("#tabs").tabs();
 
@@ -24,14 +20,40 @@ $(function () {
 
 });
 
-function zodiacSort(names) {
+function initZodiacs() {
+    $.ajax({
+        url: 'business/zodiac_orders.php?opType=1',
+        type: 'GET',
+        async: true,
+        dataType: 'json',
+        success: function (data) {
+            var names = new Array();
+            var colors = new Array();
+            var ids = new Array();
+
+            $(data).each(function (i) {
+                if (i > 0) {
+                    names[this.sorting - 1] = this.name;
+                    colors[this.sorting - 1] = this.color;
+                    ids[this.sorting - 1] = this.id;
+                }
+            });
+
+            zodiacSort(names, ids);
+            colourSelector(names, colors);
+        }
+    });
+}
+
+function zodiacSort(names, ids) {
     var $list = $(".zodiacList");
 
     for (var i = 0; i < 12; i++) {
         var name = names[i];
+        var id = ids[i];
 
         $list.append(
-            $('<div class="items"><h3 class="item_title">Order:' + (i + 1) + '</h3><img src="img/detail_' + name + '.gif"></div>')
+            $('<div class="items"><h3 class="item_title">Order:' + (i + 1) + '</h3><img src="img/detail_' + name + '.gif"><input type="hidden" value="' + id + '"></div>')
         );
     }
 
@@ -49,7 +71,23 @@ function zodiacSort(names) {
             var new_order = [];
             $list.children(".items").each(function (index) {
                 $(this).find(".item_title").text("Order:" + (index + 1));
+                new_order[index] = $(this).find("input:hidden").val();
             });
+            modifyZodiacSorting(JSON.stringify(new_order));
+        }
+    });
+}
+
+function modifyZodiacSorting(newSorting) {
+    $.ajax({
+        url: 'business/zodiac_orders.php?opType=2',
+        type: 'POST',
+        async: true,
+        data: {
+            data: newSorting
+        },
+        dataType: 'json',
+        success: function (data) {
 
         }
     });
@@ -75,6 +113,10 @@ function colourSelector(names, colors) {
         slide: refreshSwatch,
         change: refreshSwatch
     });
+
+    $("#red").slider("value", 0);
+    $("#green").slider("value", 0);
+    $("#blue").slider("value", 0);
 
 
     $("input[type=radio]").click(function () {

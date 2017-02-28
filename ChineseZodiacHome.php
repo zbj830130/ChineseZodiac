@@ -10,19 +10,14 @@
     <!--[if lt IE 9]>
     <script src="JS/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="CSS/main.css" type="text/css" />
-    <link rel="stylesheet" href="CSS/home.css" type="text/css" />
+    <?php include 'CommonPage/Config.php' ?>
+    <link rel="stylesheet" href="CSS/main.css?r=<?php echo $css_version;?>" type="text/css" />
+    <link rel="stylesheet" href="CSS/home.css?r=<?php echo $css_version;?>" type="text/css" />
 </head>
 
 <body>
     <header>
-        <p class="logo">
-            <a href="/"><img src="img/icon.png" /></a>
-            <span>CHINESE ZODIAC</span>
-        </p>
-        <nav class="nav">
-            <?php include "CommonPage/Header.php"?>
-        </nav>
+        <?php include "CommonPage/Header.php"?>
     </header>
 
     <contain class="contain">
@@ -52,8 +47,8 @@
         <?php include 'CommonPage/Footer.php' ?>
     </footer>
     <script type="text/javascript" src="JS/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="JS/home.js"></script>
-    <script type="text/javascript" src="JS/CalConv.js"></script>
+    <script type="text/javascript" src="JS/home.js?r=<?php echo $javasrcipt_version;?>"></script>
+    <script type="text/javascript" src="JS/CalConv.js?r=<?php echo $javasrcipt_version;?>"></script>
 </body>
 
 </html>

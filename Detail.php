@@ -10,19 +10,14 @@
     <!--[if lt IE 9]>
     <script src="JS/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="CSS/main.css" type="text/css" />
-    <link rel="stylesheet" href="CSS/detail.css" type="text/css" />
+    <?php include 'CommonPage/Config.php' ?>
+    <link rel="stylesheet" href="CSS/main.css?r=<?php echo $css_version;?>" type="text/css" />
+    <link rel="stylesheet" href="CSS/detail.css?r=<?php echo $css_version;?>" type="text/css" />
 </head>
 
 <body>
     <header>
-        <p class="logo">
-            <a href="/"><img src="img/icon.png" /></a>
-            <span>CHINESE ZODIAC</span>
-        </p>
-        <nav class="nav">
-            <?php include "CommonPage/Header.php"?>
-        </nav>
+        <?php include "CommonPage/Header.php"?>
     </header>
     <contain class="contain">
         <div id="wheelDiv" class="masonryItem"></div>
@@ -36,7 +31,7 @@
     <script type="text/javascript" src="JS/raphael.icons.min.js"></script>
     <script type="text/javascript" src="JS/wheelnav.min.js"></script>
     <script type="text/javascript" src="JS/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="JS/detail.js"></script>
+    <script type="text/javascript" src="JS/detail.js?r=<?php echo $javasrcipt_version;?>"></script>
 </body>
 
 </html>

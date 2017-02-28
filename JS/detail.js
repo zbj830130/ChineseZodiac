@@ -1,14 +1,41 @@
 $(function () {
+    initZodiacs();
+    zodiacDetailListOrdering();
+});
 
+function initZodiacs() {
+    $.ajax({
+        url: 'business/zodiac_orders.php?opType=1',
+        type: 'GET',
+        async: false,
+        dataType: 'json',
+        success: function (data) {
+            var names = new Array();
+            var colors = new Array();
+
+            $(data).each(function (i) {
+                if (i > 0) {
+                    names[this.sorting - 1] = this.name;
+                    colors[this.sorting - 1] = this.color;
+                }
+            });
+            
+            initWheelNav(names, colors);
+        }
+    })
+}
+
+
+function initWheelNav(names, colors) {
     var wheel = new wheelnav('wheelDiv');
     wheel.slicePathFunction = slicePath().WheelSlice;
     wheel.markerPathFunction = markerPath().PieLineMarker;
     wheel.clickModeRotate = false;
     wheel.markerEnable = true;
 
-    var colors = ['#b25d25', '#808080', '#ffb61e', '#d41863', '#eacd76', '#8d4bbb', '#4169E1', '#00e09e', '#00e500', '#f00056', '#8A2BE2', '#fabc35'];
+    //var colors = ['#b25d25', '#808080', '#ffb61e', '#d41863', '#eacd76', '#8d4bbb', '#4169E1', '#00e09e', '#00e500', '#f00056', '#8A2BE2', '#fabc35'];
 
-    var names = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'];
+    //var names = ['Rat', 'Ox', 'Tiger', 'Rabbit', 'Dragon', 'Snake', 'Horse', 'Goat', 'Monkey', 'Rooster', 'Dog', 'Pig'];
 
     wheel.colors = colors;
     wheel.createWheel(names);
@@ -48,9 +75,7 @@ $(function () {
             };
         })(newColor, name);
     };
-
-    zodiacDetailListOrdering();
-});
+}
 
 function zodiacDetailListOrdering() {
     $(".masonryItem").each(function (index) {

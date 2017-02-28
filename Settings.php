@@ -10,20 +10,15 @@
     <!--[if lt IE 9]>
     <script src="JS/html5shiv.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="CSS/main.css" type="text/css" />
-    <link rel="stylesheet" href="CSS/settings.css" type="text/css" />
-    <link rel="stylesheet" href="CSS/jquery-ui.min.css" type="text/css" />
+    <?php include 'CommonPage/Config.php' ?>
+        <link rel="stylesheet" href="CSS/main.css?r=<?php echo $css_version;?>" type="text/css" />
+        <link rel="stylesheet" href="CSS/settings.css?r=<?php echo $css_version;?>" type="text/css" />
+        <link rel="stylesheet" href="CSS/jquery-ui.min.css" type="text/css" />
 </head>
 
 <body>
     <header>
-        <p class="logo">
-            <a href="/"><img src="img/icon.png" /></a>
-            <span>CHINESE ZODIAC</span>
-        </p>
-        <nav class="nav">
-            <?php include "CommonPage/Header.php"?>
-        </nav>
+        <?php include "CommonPage/Header.php"?>
     </header>
     <contain class="contain">
         <div id="tabs">
@@ -41,7 +36,9 @@
                     <div id="green"></div>
                     <div id="blue"></div>
                     <div id="swatch" class="ui-widget-content ui-corner-all"></div>
-                    <input type="button" value="Submit" id="submitColor">
+                    <a href="javascript:vodi(0)">
+                        <img src="Img/submit.png" id="submitColor">
+                    </a>
                 </div>
                 <div class="nameColourList">
                 </div>
@@ -55,7 +52,7 @@
     </footer>
     <script type="text/javascript" src="JS/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="JS/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="JS/settings.js"></script>
+    <script type="text/javascript" src="JS/settings.js?r=<?php echo $javasrcipt_version;?>"></script>
 </body>
 
 </html>
