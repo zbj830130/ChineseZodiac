@@ -19,7 +19,7 @@ function initZodiacs() {
                     colors[this.sorting - 1] = this.color;
                 }
             });
-            
+
             initWheelNav(names, colors);
         }
     })

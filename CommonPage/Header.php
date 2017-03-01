@@ -5,11 +5,21 @@ $style2='';
 $style3='';
 $url = $_SERVER['REQUEST_URI'];
 if(strpos($url,'Home')){
-    $style1=$style; 
-}else if(strpos($url,'Detail')){
-    $style2=$style;
+    $style1=$style.' href="javascript:void(0)"'; 
 }else{
-    $style3=$style;
+    $style1=' href="ChineseZodiacHome.php"'; 
+}
+
+if(strpos($url,'Detail')){
+    $style2=$style.' href="javascript:void(0)"'; 
+}else{
+    $style2=' href="Detail.php"';
+}
+
+if(strpos($url,'Settings')){
+    $style3=$style.' href="javascript:void(0)"'; 
+}else{
+    $style3=' href="Settings.php"';
 }
 
 
@@ -19,9 +29,9 @@ if(strpos($url,'Home')){
         </p>
         <nav class="nav">
             <ul class="nav-main">
-                <li><a '.$style1.' href="ChineseZodiacHome.php">HOME</a></li>
-                <li><a '.$style2.' href="Detail.php">DETAIL</a></li>
-                <li><a '.$style3.' href="Settings.php">SETTINGS</a></li>
+                <li><a '.$style1.'">HOME</a></li>
+                <li><a '.$style2.'">DETAIL</a></li>
+                <li><a '.$style3.'">SETTINGS</a></li>
             </ul>
         </nav>';
 ?>
